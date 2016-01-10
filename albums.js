@@ -3,6 +3,10 @@ var fs = require('fs'),
 
 exports.version = "1.0.0";
 
+exports.hello_world = function () {
+	console.log("Hello World");
+}
+
 exports.albums = function (root, callback) {
 	// we will just assume that any directory in our 'albums'
 	// subfolder is an album.
@@ -34,6 +38,7 @@ exports.albums = function (root, callback) {
 							var p = root + "albums/" + files[index];
 							album_list.push(album.create_album(p));
 						}
+						iterator(index + 1)
 					}
 				);
 			})(0);
