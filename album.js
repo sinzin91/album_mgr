@@ -1,3 +1,6 @@
+var path = require('path'),
+	fs = require('fs');
+
 function Album (album_path) {
 	this.name = path.basename(album_path);
 	this.path = album_path;
@@ -55,3 +58,15 @@ Album.prototype.photos = function (callback) {
 		}
 	);
 };
+
+exports.create_album = function (path) {
+	return new Album(path);
+};
+
+function no_such_album() {
+	return { error: "no_such_album",
+			 message: "The specified album does not exist"};
+}
+
+
+
