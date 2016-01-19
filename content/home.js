@@ -13,7 +13,7 @@ $(function() {
 		});
 
 		// Retrieve the server data and then initialize the page
-		$.getJSON("/albums.json", function (d) {
+		$.getJSON("/v1/albums.json", function (d) {
 			$.extend(tdata, d.data);
 		});
 
